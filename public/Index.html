@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AR & VR Innovations</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --primary-color: #61dafb;
+            --background-color: #282c34;
+            --text-color: #589fd5;
+            --hero-text-color: white;
+            --section-bg-light: #f7f7f7;
+            --table-header-bg: #61dafb;
+            --table-border-color: #ddd;
+            --transition-speed: 0.3s;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-color);
+            background-color: var(--section-bg-light);
+        }
+        .navbar {
+            background-color: var(--background-color);
+        }
+        .navbar-brand {
+            color: var(--primary-color);
+            font-weight: 700;
+            transition: color var(--transition-speed);
+        }
+        .navbar-brand:hover {
+            color: white;
+        }
+        .navbar-nav .nav-link {
+            color: white !important;
+            transition: color var(--transition-speed);
+        }
+        .navbar-nav .nav-link:hover {
+            color: var(--primary-color) !important;
+        }
+        .search-container {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+        .search-input {
+            width: 40%;
+            padding: 10px;
+            font-size: 1rem;
+            border-radius: 30px;
+            border: 1px solid var(--primary-color);
+            outline: none;
+            transition: border var(--transition-speed);
+        }
+        .search-input:focus {
+            border-color: var(--background-color);
+        }
+        .hero {
+            background: url('https://via.placeholder.com/1600x800?text=AR+VR+Innovations') no-repeat center center;
+            background-size: cover;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--hero-text-color);
+            position: relative;
+            transition: background var(--transition-speed);
+        }
+        .hero-overlay {
+            background: rgba(0, 0, 0, 0.4);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            animation: fadeIn 2s ease-in;
+        }
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            animation: fadeIn 2s ease-in 0.5s;
+        }
+        .btn-primary {
+            background-color: var(--primary-color);
+            border: none;
+            padding: 15px 30px;
+            font-size: 1rem;
+            border-radius: 50px;
+            text-transform: uppercase;
+            transition: background-color var(--transition-speed);
+        }
+        .btn-primary:hover {
+            background-color: white;
+            color: var(--primary-color);
+        }
+        .section {
+            padding: 60px 0;
+            text-align: center;
+        }
+        .section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--background-color);
+            animation: fadeInUp 1.5s ease-in;
+        }
+        .section p {
+            font-size: 1.2rem;
+            color: #555;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .section img {
+            width: 100%;
+            max-width: 100%;
+            border-radius: 10px;
+            margin-top: 20px;
+            transition: transform var(--transition-speed);
+        }
+        .section img:hover {
+            transform: scale(1.05);
+        }
+        .footer {
+            background-color: var(--background-color);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        .footer a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        .footer p {
+            margin: 10px 0;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Table Styles */
+        .table th, .table td {
+            vertical-align: middle;
+        }
+        .table thead th {
+            background-color: var(--table-header-bg);
+            color: white;
+            font-weight: 700;
+        }
+        .table tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .table tbody tr:hover {
+            background-color: #e2e2e2;
+        }
+        .table-bordered {
+            border: 1px solid var(--table-border-color);
+        }
+        .table-bordered th, .table-bordered td {
+            border: 1px solid var(--table-border-color);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#">AR & VR Innovations</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#ar">Augmented Reality</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#vr">Virtual Reality</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Search Bar -->
+    <div class="search-container">
+        <input type="text" id="searchInput" class="search-input" placeholder="Search AR & VR Innovations...">
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Discover the Future of AR & VR</h1>
+            <p>Immerse yourself in the latest advancements in Augmented and Virtual Reality technologies.</p>
+            <a href="#learn-more" class="btn btn-primary">Learn More</a>
+        </div>
+    </section>
+
+    <!-- AR Section -->
+    <section id="ar" class="section">
+        <div class="container">
+            <h2>Augmented Reality (AR)</h2>
+            <p>Augmented Reality enhances your real-world environment with interactive digital elements. Experience a new dimension of engagement with AR, which is transforming sectors like education, retail, and entertainment.</p>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <img src="AR.jpg" alt="Augmented Reality Image" class="img-fluid">
+                </div>
+                <div class="col-md-6 mb-4">
+                    <img src="5.jpg" alt="Augmented Reality Image" class="img-fluid">
+                </div>
+            </div>
+            <!-- AR Features Table -->
+            <table class="table table-striped table-bordered mt-5">
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Education</td>
+                        <td>AR enhances learning by providing interactive and immersive experiences.</td>
+                    </tr>
+                    <tr>
+                        <td>Retail</td>
+                        <td>AR allows customers to try products virtually before purchasing.</td>
+                    </tr>
+                    <tr>
+                        <td>Entertainment</td>
+                        <td>AR transforms the way people experience media, making it more engaging.</td>
+                    </tr>
+                    <tr>
+                        <td>Healthcare</td>
+                        <td>AR assists in medical training and visualization of complex procedures.</td>
+                    </tr>
+                    <tr>
+                        <td>Navigation</td>
+                        <td>AR overlays directions and points of interest onto real-world views.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- VR Section -->
+    <section id="vr" class="section" style="background-color: #e9ecef;">
+        <div class="container">
+            <h2>Virtual Reality (VR)</h2>
+            <p>Virtual Reality immerses users in entirely digital environments, creating simulations that can be used for gaming, training, and beyond. Explore the potential of VR in revolutionizing various fields.</p>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <img src="VR.jpg" alt="Virtual Reality Image" class="img-fluid">
+                </div>
+                <div class="col-md-4 mb-4">
+                    <img src="1.jpg" alt="Virtual Reality Image" class="img-fluid">
+                </div>
+                <div class="col-md-4 mb-4">
+                    <img src="2.jpg" alt="Virtual Reality Image" class="img-fluid">
+                </div>
+                <div class="col-md-4 mb-4">
+                    <img src="3.jpg" alt="Virtual Reality Image" class="img-fluid">
+                </div>
+                <div class="col-md-4 mb-4">
+                    <img src="4.jpg" alt="Virtual Reality Image" class="img-fluid">
+                </div>
+            </div>
+            <!-- VR Features Table -->
+            <table class="table table-striped table-bordered mt-5">
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Gaming</td>
+                        <td>VR offers immersive gaming experiences with a sense of presence.</td>
+                    </tr>
+                    <tr>
+                        <td>Training</td>
+                        <td>VR provides realistic simulations for training in various professions.</td>
+                    </tr>
+                    <tr>
+                        <td>Tourism</td>
+                        <td>VR allows users to explore destinations and experiences virtually.</td>
+                    </tr>
+                    <tr>
+                        <td>Healthcare</td>
+                        <td>VR aids in therapeutic treatments and mental health care.</td>
+                    </tr>
+                    <tr>
+                        <td>Design</td>
+                        <td>VR is used for visualizing designs and prototypes in 3D.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 AR & VR Innovations. All rights reserved.</p>
+            <p>
+                Follow us on <a href="#">Facebook</a>, <a href="#">Twitter</a>, and <a href="#">Instagram</a>.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
